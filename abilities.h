@@ -17,8 +17,8 @@ class Ability {
     //ability variables
     std::string abilityName;
     int staminaCost;        //how much stamina is required to perform ability
-    int damageDealt;        //how much damage ability deals
-    int healthRegen;        //how much health ability regenerates
+    int damage;        //how much damage ability deals
+    int heal;        //how much health ability regenerates
 
     public:
     //constructor
@@ -42,17 +42,7 @@ class Ability {
 //ability that can heal a player 
 class ForceMeditation : public Ability {
     public:
-    ForceMeditation (); 
-    void use(Character& user, Character& opponent) override;
-};
-
-
-
-
-//ability that can heal a player 
-class ForceMeditation : public Ability {
-    public:
-    ForceMeditation (); 
+    ForceMeditation ();
     void use(Character& user, Character& opponent) override;
 };
 
@@ -62,7 +52,7 @@ class ForceMeditation : public Ability {
 //combat ability, user shoot lightning at opponent, dealing damage
 class ForceLightning : public Ability {
     public:
-    ForceLightning (); 
+    ForceLightning ();
     void use (Character& user, Character& opponent) override;
 };
 
@@ -71,7 +61,7 @@ class ForceLightning : public Ability {
 
 //combat ability, user strikes opponent with lightsaber
 class SaberStrike : public Ability {
-    public:
+    public: 
     SaberStrike ();
     void use (Character& user, Character& opponent) override;
 };
@@ -81,9 +71,9 @@ class SaberStrike : public Ability {
 
 //counters negates damage and strikes opponents if non force ability is used
 class Counter : public Ability {
-    public:
+    public:     
     Counter ();
-    void use (Character& user, Character& opponent) override;
+    void use (Character& user, Character& opponent) override;    
 };
 
 #endif //ABILITY_H
